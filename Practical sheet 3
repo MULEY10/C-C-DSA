@@ -59,3 +59,49 @@ int main() {
 ------------------------------------------------------------------------------
 Program 5: 
 
+#include <stdio.h>
+
+int main() {
+    int units;
+    double bill = 0;
+
+    printf("Enter the number of units consumed: ");
+    scanf("%d", &units);
+
+    if (units <= 100) {
+        bill = units * 5;
+    } else if (units <= 300) {
+        bill = 100 * 5 + (units - 100) * 7;
+    } else {
+        bill = 100 * 5 + 200 * 7 + (units - 300) * 10;
+    }
+
+    printf("Total bill: ₹%.2f\n", bill);
+    return 0;
+}
+----------------------------------------------------------------------------------
+Program 6: to suggest a better career field based on some rules
+
+#include <stdio.h>
+
+int main() {
+    int marks;
+
+    printf("Enter the marks obtained: ");
+    scanf("%d", &marks);
+
+    if (marks >= 85) {
+        printf("Suggested Career Fields: Engineering, Medical Sciences, Data Science, Law, Research & Development, Management.\n");
+    } else if (marks >= 70) {
+        printf("Suggested Career Fields: Engineering, BBA, Data Science, Research.\n");
+    } else if (marks >= 50) {
+        printf("Suggested Career Fields: B.Com, Arts, Vocational Courses.\n");
+    } else {
+        printf("Suggested Career Fields: Vocational Courses, Skill Development.\n");
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------
+Program 7: 
+
