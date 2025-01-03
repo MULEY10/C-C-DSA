@@ -1,1 +1,61 @@
+Program 1: To check whether the number is in range of 10 to 1000 or not
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number >= 1 && number <= 1000) {
+        printf("The number is in the range of 1 to 1000.\n");
+    } else {
+        printf("The number is not in the range of 1 to 1000.\n");
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------
+Program 2: To check whether the year is leap or not
+#include <stdio.h>
+
+int main() {
+    int year;
+
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        printf("%d is a leap year.\n", year);
+    } else {
+        printf("%d is not a leap year.\n", year);
+    }
+
+    return 0;
+}
+---------------------------------------------------------------------------
+Program 4: to check whether a character is a consonent or vowel
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || 
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+            printf("%c is a vowel.\n", ch);
+        } else {
+            printf("%c is a consonant.\n", ch);
+        }
+    } else {
+        printf("%c is not a valid alphabet.\n", ch);
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------
+Program 5: 
 
