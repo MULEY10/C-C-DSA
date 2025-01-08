@@ -1,3 +1,4 @@
+Program1: Create integer array of N elements and print even indexed elements.
 #include<stdio.h>
 
 void main(){
@@ -20,4 +21,6 @@ void main(){
         }
     }
 }
+-------------------------------------------------------------------------------------------
 
+Program2: 
