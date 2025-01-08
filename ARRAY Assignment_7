@@ -1,0 +1,260 @@
+Program 1: create an integer array of N elements and print min and max element in array
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int min = arr[0], max = arr[0];
+
+    for (i = 1; i < N; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    printf("Minimum element: %d\n", min);
+    printf("Maximum element: %d\n", max);
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------
+Program 2: create an int array of N distinct elements and print the second largest element of an array
+#include <stdio.h>
+
+int main() {
+    int N, i, first, second;
+    
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d distinct elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    first = second = arr[0];
+
+    for (i = 1; i < N; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] < first) {
+            second = arr[i];
+        }
+    }
+
+    printf("Second largest element: %d\n", second);
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+Program 3: create an int array and print the first repeating element in an array
+#include <stdio.h>
+
+int main() {
+    int N, i, j;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < N; i++) {
+        for (j = i + 1; j < N; j++) {
+            if (arr[i] == arr[j]) {
+                printf("First repeating element: %d\n", arr[i]);
+                return 0;
+            }
+        }
+    }
+
+    printf("No repeating elements present.\n");
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+Program 4: create an int array of N distinct elements and print second minimum of an array
+#include <stdio.h>
+
+int main() {
+    int N, i, first, second;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d distinct elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    first = second = arr[0];
+
+    for (i = 1; i < N; i++) {
+        if (arr[i] < first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] < second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+
+    printf("Second minimum element: %d\n", second);
+
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Program 5: a majority element in an array of size n is an element that appears more than n/2 times. WAP to find the majority element if exist
+#include <stdio.h>
+
+int main() {
+    int N, i, count = 0, majorityElement;
+    
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    majorityElement = arr[0];
+    for (i = 0; i < N; i++) {
+        if (count == 0) {
+            majorityElement = arr[i];
+        }
+        count += (arr[i] == majorityElement) ? 1 : -1;
+    }
+
+    count = 0;
+    for (i = 0; i < N; i++) {
+        if (arr[i] == majorityElement) {
+            count++;
+        }
+    }
+
+    if (count > N / 2) {
+        printf("Majority element: %d\n", majorityElement);
+    } else {
+        printf("No majority element\n");
+    }
+
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Program 6: WAP to count the frequency of each element in array
+#include <stdio.h>
+
+int main() {
+    int N, i, j;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Element frequencies:\n");
+    for (i = 0; i < N; i++) {
+        int count = 1;
+        for (j = i + 1; j < N; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+                arr[j] = -1;  // Mark counted elements
+            }
+        }
+        if (arr[i] != -1) {
+            printf("%d occurs %d times\n", arr[i], count);
+        }
+    }
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+Program 7: find all pairs of elements in array whose sum equals a given number
+#include <stdio.h>
+
+int main() {
+    int N, i, j;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N];
+
+    printf("Enter %d elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Pairs whose sum equals 10:\n");  // You can change 10 to any fixed number
+    for (i = 0; i < N; i++) {
+        for (j = i + 1; j < N; j++) {
+            if (arr[i] + arr[j] == 10) {  // Set the sum to 10
+                printf("(%d, %d)\n", arr[i], arr[j]);
+            }
+        }
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Program 8: replace all zeroes from the array elements with 5
+ 
+#include <stdio.h>
+
+int main() {
+    int N, i;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &N);
+
+    int arr[N], newArr[N];
+
+    printf("Enter %d elements: \n", N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < N; i++) {
+        newArr[i] = (arr[i] == 0) ? 5 : arr[i];
+    }
+
+    printf("Updated array:\n");
+    for (i = 0; i < N; i++) {
+        printf("%d ", newArr[i]);
+    }
+
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------
+Program 9: 
+----------------------------------------------------------------------------------------------------------------------
+Program 10: 
