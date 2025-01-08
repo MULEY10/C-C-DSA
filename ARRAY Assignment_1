@@ -234,3 +234,53 @@ void main() {
 
     printf("Product of odd-indexed elements: %d\n", prodOddIndex);
 }
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Program 9:create int array of N elements, take input from user, any number om array divisible by 5, print it's index of occurence and break the loop
+
+#include<stdio.h>
+
+void main() {
+    int size;
+
+    printf("Enter the size of the array: \n");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Enter the array elements: \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 5 == 0) {
+            printf("First index of number divisible by 5: %d\n", i);
+            break;
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Program 10: create char array of N elements, take input from user, check any vowerl present in array, if present print the index and vowel also
+#include<stdio.h>
+
+void main() {
+    int size;
+
+    printf("Enter the size of the array: \n");
+    scanf("%d", &size);
+
+    char arr[size];
+
+    printf("Enter the array elements: \n");
+    for (int i = 0; i < size; i++) {
+        scanf(" %c", &arr[i]);
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' || arr[i] == 'o' || arr[i] == 'u' ||
+            arr[i] == 'A' || arr[i] == 'E' || arr[i] == 'I' || arr[i] == 'O' || arr[i] == 'U') {
+            printf("Vowel '%c' found at index %d\n", arr[i], i);
+            break;
+        }
+    }
+}
