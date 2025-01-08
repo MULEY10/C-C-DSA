@@ -23,4 +23,125 @@ void main(){
 }
 -------------------------------------------------------------------------------------------
 
-Program2: 
+Program2: create int array of N elements, take input from user, print sum of even indexed elements from array
+
+#include<stdio.h>
+
+void main(){
+    int size;
+    int sum=0;
+    
+    printf("Enter the size of the array: \n");
+    scanf("%d",&size);
+    printf("Array size is: %d \n");
+    
+    int arr[size];
+    printf("Enter the array elements: \n");
+    for(int i=0; i<size; i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    for(int i=0;i<=size;i++){
+        if(i%2==0){
+            sum+=arr[i];
+            
+            
+        }
+    }
+    printf("Sum of even index elements: %d\n",sum);
+    
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+Program 3: create int array of N elements, take input from user, print product of even elements
+
+#include<stdio.h>
+
+void main() {
+    int size, hasEven = 0;
+    int prod = 1;
+
+    printf("Enter the size of the array: \n");
+    scanf("%d", &size);
+    printf("Array size is: %d \n", size);
+
+    int arr[size];
+
+    printf("Enter the array elements: \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            prod *= arr[i];
+            hasEven = 1;
+        }
+    }
+
+    if (hasEven) {
+        printf("Product of even elements: %d\n", prod);
+    } else {
+        printf("No even elements found. Product is 0.\n");
+    }
+}
+---------------------------------------------------------------------------------------------
+
+Program 4: create int array of N elements, take input from user, print even numbers
+
+#include<stdio.h>
+
+void main() {
+    int size;
+
+    printf("Enter the size of the array: \n");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Enter the array elements: \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Even numbers in the array are: \n");
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
+}
+
+-----------------------------------------------------------------------------------------------------------------
+Program 5: create int array of N elements, take input from user, print product of odd elements of array
+
+#include<stdio.h>
+
+void main() {
+    int size, prod = 1;
+
+    printf("Enter the size of the array: \n");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Enter the array elements: \n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int oddFound = 0; // Track if any odd elements are present
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 != 0) { // Check for odd numbers
+            prod *= arr[i];
+            oddFound = 1;
+        }
+    }
+
+    // Output based on whether any odd numbers were found
+    if (oddFound) {
+        printf("Product of odd elements: %d\n", prod);
+    } else {
+        printf("No odd elements found in the array\n")
+
+-----------------------------------------------------------------------------------------------
