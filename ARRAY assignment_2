@@ -249,4 +249,60 @@ int main() {
     return 0;
 }
 ------------------------------------------------------------------------------------------------------------------
-Program 9: 
+Program 9: create an array of int that asks user for the size of an array and elements and 
+           also asks for the index value upto which element shall be printed
+#include <stdio.h>
+
+int main() {
+    int size, index;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int intArray[size];
+
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &intArray[i]);
+    }
+
+    printf("Enter the index up to which elements should be printed: ");
+    scanf("%d", &index);
+
+    if (index >= size) {
+        printf("Index exceeds the array size. Printing all elements up to the last index.\n");
+        index = size - 1;
+    }
+
+    printf("Array elements up to index %d:\n", index);
+    for (int i = 0; i <= index; i++) {
+        printf("%d ", intArray[i]);
+    }
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Program 10: create array of int that asks user for size of an array and elements of an array and print array in reverse order
+#include <stdio.h>
+
+int main() {
+    int size;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int intArray[size];
+
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &intArray[i]);
+    }
+
+    printf("Array in reverse order:\n");
+    for (int i = size - 1; i >= 0; i--) {
+        printf("%d ", intArray[i]);
+    }
+
+    return 0;
+}
+-------------------------------------------------------------------------------
