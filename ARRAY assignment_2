@@ -198,3 +198,27 @@ int main() {
 }
 ------------------------------------------------------------------------------------------------
 Program 7: 
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int size;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int array[size];
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        int element;
+        scanf("%d", &element);
+        array[i] = (element % 2 == 0) ? element * element : (int)pow(element, 3);
+    }
+
+    printf("Array:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", array[i]);
+    }
+
+    return 0;
+}
